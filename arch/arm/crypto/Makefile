@@ -43,6 +43,8 @@ nhpoly1305-neon-y := nh-neon-core.o nhpoly1305-neon-glue.o
 
 ccflags-y := -O3
 
+ccflags-y := -O3
+
 quiet_cmd_perl = PERL    $@
       cmd_perl = $(PERL) $(<) > $(@)
 
