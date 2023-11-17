@@ -2,6 +2,8 @@
 
 echo "Building Radioactive Kernel"
 
+export LLVM=1
+
 # Clang
 echo "Using Prelude-Clang"
 git clone -b master https://gitlab.com/jjpprrrr/prelude-clang.git --depth=1 clang
