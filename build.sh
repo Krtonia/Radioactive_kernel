@@ -30,7 +30,7 @@ IMAGE=$(pwd)/out/arch/arm64/boot/Image.gz-dtb
 
 # Clone AnyKernel
 echo "Cloning AnyKernel3"
-git clone --depth=1 https://github.com/Krtonia/AnyKernel3.git -b master AnyKernel3
+git clone --depth=1 https://github.com/Krtonia/AnyKernel3.git -b radioactive AnyKernel3
 
 # Specify Final Zip Name
 ZIPNAME=Radioactive-beryllium
