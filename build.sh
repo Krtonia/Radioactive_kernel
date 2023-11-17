@@ -1,8 +1,10 @@
 #!/bin/sh
 
+echo "Building Radioactive Kernel"
+
 # Clang
-echo "Using cosmic-18 Clang"
-git clone -b master https://gitlab.com/GhostMaster69-dev/cosmic-clang --depth=1 clang
+echo "Using Prelude-Clang"
+git clone -b master https://gitlab.com/jjpprrrr/prelude-clang.git --depth=1 clang
 
 # Some general variables
 KERNELNAME="Radioactive"
