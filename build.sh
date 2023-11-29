@@ -1,6 +1,10 @@
 #!/bin/sh
 
-echo "Building Radioactive Kernel"
+echo -e "*****************************"
+echo -e "**                         **"
+echo -e "** Building Radioactive... **"
+echo -e "**                         **"
+echo -e "*****************************"
 
 export LLVM=1
 
@@ -33,6 +37,9 @@ IMAGE=$(pwd)/out/arch/arm64/boot/Image.gz-dtb
 # Clone AnyKernel
 echo "Cloning AnyKernel3"
 git clone --depth=1 https://github.com/Krtonia/AnyKernel3.git -b radioactive AnyKernel3
+
+# Create Logs
+exec 2> >(tee -a out/error.log >&2)
 
 # Specify Final Zip Name
 ZIPNAME=Radioactive-beryllium
@@ -125,3 +132,6 @@ zipping
 BUILD_END=$(date +"%s")
 DIFF=$(($BUILD_END - $BUILD_START))
 echo -e "$yellow Build completed in $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) seconds.$nocol"
+
+echo "Uploading to PixelDrain"
+cd AnyKernel3 curl --progress-bar -T "$FINAL_ZIP" https://pixeldrain.com/api/file/ | cat
