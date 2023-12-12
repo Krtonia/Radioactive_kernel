@@ -134,4 +134,4 @@ DIFF=$(($BUILD_END - $BUILD_START))
 echo -e "$yellow Build completed in $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) seconds.$nocol"
 
 echo "Uploading to PixelDrain"
-cd AnyKernel3 curl --progress-bar -T "$FINAL_ZIP" https://pixeldrain.com/api/file/ | cat
+cd AnyKernel3 && curl --progress-bar -T "$FINAL_ZIP" https://pixeldrain.com/api/file/ | cat
